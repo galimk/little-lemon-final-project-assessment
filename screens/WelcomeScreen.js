@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Text, Image, View, Pressable, StyleSheet } from "react-native";
+import { LittleLemonButton } from "./LittleLemonButton";
 
 const WelcomeScreen = ({ navigation }) => (
   <View style={styles.container}>
@@ -9,11 +10,7 @@ const WelcomeScreen = ({ navigation }) => (
     <View style={styles.titleContainer}>
       <Text style={styles.title}>Little Lemon, your local Mediterranean Bistro</Text>
     </View>
-    <Pressable style={styles.pressableContainer} onPress={() => navigation.navigate("Subscribe")}>
-      <Text style={styles.newsletterLink}>
-        Newsletter
-      </Text>
-    </Pressable>
+    <LittleLemonButton buttonText="Newsletter" onPress={() => navigation.navigate("Subscribe")} />
   </View>
 );
 
@@ -38,22 +35,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     textAlign: "center"
-  },
-  pressableContainer: {
-    backgroundColor: '#37424A',
-    borderRadius: 10,
-    width: '90%',
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  newsletterLink: {
-    margin: 10,
-    textAlign: "center",
-    fontSize: 20,
-    color: "white",
-
   }
 });
 

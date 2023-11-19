@@ -40,7 +40,8 @@ const SubscribeScreen = () => {
         textContentType={"emailAddress"}
         placeholder="Type your email"
       />
-      <LittleLemonButton disabled={subscriptionState.isSubscribed} buttonText="Subscribe" onPress={handleSubscribe} />
+      <LittleLemonButton disabled={subscriptionState.isSubscribed || subscriptionState.email.length === 0}
+                         buttonText="Subscribe" onPress={handleSubscribe} />
     </View>
   );
 };
